@@ -1,16 +1,20 @@
 <div id="header">
-  <%= link_to "Logo", root_path , :id => "large_header_logo" %>
+  
+  <%= logo_link %>
+  
   <% if notice %>
   <p class="notice"><%= notice %></p>
   <% elsif alert %>
   <p class="alert"><%= alert %></p>
   <% end %>
+  
   <div id="header_links">
     <p><span class="white"><%= @welcome_message %></span>
       &bull;
-      <%= link_to "Preferences", edit_user_registration_path, :class => "yellow" %></p>
+      <%= preferences_link %></p>
       <p>
-        <%= hide(link_to "Tour Jot Locker", "#") %><%= link_to "Feedback", "mailto:feedback@jotlocker.com" %>&bull;<%= link_to "Contact Us", "mailto:contact@jotlocker.com" %>&bull;<%= link_to "Log Out", destroy_user_session_path %>
+        <%= hide(link_to "Tour Jot Locker", "#") %>
+<%= "#{feedback_email}&bull;#{contact_email}&bull;#{log_out_link}".html_safe %>
       </p>
   </div> <!--header links-->
 </div><!--header-->

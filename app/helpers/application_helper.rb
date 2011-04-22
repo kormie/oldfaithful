@@ -1,4 +1,27 @@
 module ApplicationHelper
+  
+  def logo_link
+    link_to "Logo", root_path , :id => "large_header_logo"
+  end
+  
+  def feedback_email
+    link_to "Feedback", "mailto:feedback@jotlocker.com"
+  end
+  
+  def contact_email
+    link_to "Contact Us", "mailto:contact@jotlocker.com"
+  end
+  
+  def log_out_link
+    link_to "Log Out", destroy_user_session_path
+  end
+  
+  def preferences_link
+    link_to "Preferences", edit_user_registration_path, :class => "yellow"
+  end
+  
+  
+  
   def date_at_time var
     var.strftime('%B %e, %Y @ %I:%M %p')
   end
@@ -16,7 +39,6 @@ module ApplicationHelper
   def jot_title (jot)
     if jot.visibility == true
       jot.title = ("#{h(jot.title)}<span class='meta asterisk'> *</span>").html_safe
-      return jot.title
     end
     return jot.title
   end
@@ -48,7 +70,6 @@ module ApplicationHelper
     facebook_url = session[:fbpic]
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=80&d=#{CGI.escape(default_url)}"
-    
   end
   def pub_count(course)
     "Published (#{course.num_published_jots})"

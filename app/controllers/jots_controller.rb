@@ -10,7 +10,6 @@ class JotsController < ApplicationController
     @page_title = "#{current_user.first_name}'s Jots"
     @welcome_message = @page_title
     @jots = @user.jots.order("updated_at DESC").uniq
-    @courses = @user.courses.order("title")
     @breadcrumbs = [{:image => "jot_locker/arrow", :path => courses_path}]
     @breadcrumbs << {:image => "jots", :path => jots_path}
     respond_to do |format|
