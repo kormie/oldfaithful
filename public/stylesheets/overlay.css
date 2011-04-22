@@ -1,0 +1,282 @@
+#overlay {
+    position:relative;
+    z-index:5000;
+    width: 575px;
+    background: #fff;
+    color: #000;
+    margin:auto;
+    margin-top: 70px;
+    margin-bottom:-546px;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+/* ===[ General Style ]=== */
+
+a {
+    text-decoration: none;
+    border: none;
+    color:#008a7a;
+}
+
+.left {
+    float: left;
+    padding-left: 30px;/*should be 25*/
+}
+
+.right {
+    float: right;
+    padding-right: 30px;
+}
+
+.faded {
+    color: #60aba3
+}
+
+.error {
+    color: red
+}
+
+/* ==[ Chris Coyier's Clearfix ]== */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+/* ===[ Header ]=== */
+
+#header {
+    color: #fff;
+    background: #008a7a;
+    height: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+/* ===[ Inner Header ]=== */
+
+#innerhead {
+    height: 10px;
+    font-size: 12px;
+    font-weight:bold;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #008a7a;
+    margin: 0 30px 12px;
+    position:relative;
+}
+
+    #innerhead a{
+      color:#008a7a;
+    }
+
+    #innerhead .right {
+        padding-left:0;
+        padding-right:0;
+    }
+
+    #innerhead .left,
+    #innerhead .right {
+        padding-bottom: 4px;
+    }
+
+    #innerhead .left {
+        font-weight: bold;
+        padding-left:0;
+    }
+    
+    .seven{      
+        margin-left:7px;
+    }
+    
+    #innerhead #innerheadtext{
+      float:right;
+      margin-top:-5px;
+    }
+    
+    #innerhead img{
+      margin-top:-5px;
+    }
+    
+    #innerheadtext img{
+    padding-top:5px;
+    margin-top:-15px;
+    margin-bottom:-3px;
+    }
+    
+    
+/* ===[ Body ]=== */
+    
+#body div{
+  width:240px;
+  font-size:12px;
+  margin-left:30px;
+  margin-bottom:30px;
+  float:left;
+  position:relative;
+}
+
+    #body div.bold{
+      font-weight:bold;
+      line-height:15px;
+    }
+
+#body p{
+  
+}
+
+#body p a{
+  margin-top:-20px;
+  font-weight:bold;
+}
+
+.exploreright{
+  position:relative;
+  left:170px;
+}
+
+#body p.first{
+  margin-top:20px;
+}
+
+#body p.last{
+  padding:0;
+  margin-top:10px;
+}
+
+ul, ol {
+    margin: 0px;
+    margin-left: 30px;
+    padding: 0px;
+}
+ol li{
+display:inline-block;
+margin:0 10px 0 -15px;
+padding:0;
+height:35px;
+width:530px;
+}
+
+li ol{
+display:inline;
+float:right;
+margin-top:-15px;
+}
+
+li ol li{
+display:inline;
+margin:0;
+padding:0;
+}
+
+li ol li label{
+margin-left:0;
+margin-right:5px;
+}
+
+li ol li select{
+border:1px solid #959595;
+}
+
+li ol legend{
+display:block;
+}
+
+li {
+margin-left:0px;
+padding-left:0px;
+    list-style: none;
+display:inline-block
+}
+
+li input{
+  float:right;
+  margin-top:0;
+}
+
+input{
+    border: 1px solid #959595;
+    width: 252px;
+    margin:0;
+    margin-left:30px;
+    margin-top: 12px;
+    color: #464646;
+    padding:5px 0 6px 6px;
+}
+
+form img{
+  margin-top:12px;
+  margin-left:30px;
+}
+
+input[type="image"] {
+    background: #008a7a;
+    padding:0;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    height:31px;
+    width:191px;
+    margin-top:12px;
+}
+
+input[type="image"]:hover{
+    
+}
+
+label {
+    font-family:"Arial, Helvetica, Verdana, sans-serif";
+    margin-left: 16px;
+    font-size:12px;
+    color:#464646;
+    margin-bottom:5px;
+}
+
+/* ===[ Footer ]=== */
+
+#footer {
+    font-size: 10px;
+    margin: 10px 30px 0;
+    border-top: 3px solid #008a7a;
+    padding-top: 20px;
+    color:#000;
+}
+
+    #footer img {
+        float: left;
+        margin-top:-12px; /* 6px border*/ /* at least 10px of white bellow */
+    }
+
+    #footer p {
+        padding: 3px 0 0;
+    }
+      #footer p:first-child{
+        margin-top:18px;
+      }
+
+    #footer a {
+        color: #008a7a;
+        font-weight: 500;
+    }
+
+    #footer a:hover {
+        text-decoration: underline
+    }
+    
+    #footer #copyright{
+      padding:5px 0 40px;
+    }
+    #footer div{
+      float:left;
+      
+    }

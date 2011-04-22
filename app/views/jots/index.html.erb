@@ -1,0 +1,64 @@
+<style type="text/css" media="screen">
+  div.course.not_current:nth-child(1){
+    border-top:none !important;
+  }
+</style>
+<div id="main" class="clearfix jots">
+  <div id="main_left">
+  <%= image_tag "jots/jots.png", :title => "Jots" %>
+    <div id="jots">
+      <% @jots.each do |jot, course| %>
+        <div class="jot">       
+       
+        <h3><%= link_to jot_title(jot).capitalize, "courses/#{jot.course_id}/jots/#{jot.id}" %> 
+          
+          </h3>
+       
+        <p><%= link_to shorten_jot(jot).capitalize, "courses/#{jot.course_id}/jots/#{jot.id}" %></p>
+       
+        <p class="meta">
+        <%=  date_at_time(jot.updated_at).upcase %> (GMT)
+        /
+        <% if jot.course %>
+          <%= link_to course_name(jot.course), jot.course %> /
+        <% end -%>
+
+        <% if jot.uniq_users.size >=1 %>
+
+          <% jot.most_recent_user.each do |u| %>
+            <%= u.cap_email + " / " + pluralize(jot.uniq_users.size, "JOTTER").upcase %>
+          <% end -%>
+        <% end -%>
+        </p>
+       
+       
+        </div><!--jot-->
+      <% end %>
+    </div><!--jots-->
+  </div><!--main_left-->
+  <div id="main_right">
+    <%= link_to(image_tag "jots/courses.png") %>
+    <div id="courses">
+      <% @courses.each do |course| %>
+      <div class="course not_current">
+        <h3><%= link_to course.name, course_path(course) %></h3>
+        <p><%= pluralize(course.num_jots, " Jot") %></p>
+        <p class="meta"><%= course_jot_links(course) %></p>
+      </div>
+      <% end %>
+    </div>
+    <div class="ads">
+      <script type="text/javascript"><!--
+      google_ad_client = "ca-pub-4791985966634135";
+      /* ads */
+      google_ad_slot = "4592538321";
+      google_ad_width = 250;
+      google_ad_height = 250;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+    </div>
+  </div>
+</div>

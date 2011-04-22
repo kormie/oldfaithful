@@ -1,0 +1,23 @@
+<div id="jots" style="padding-top:10px;">
+  <%= semantic_form_for [@jot.course, @jot] do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :title %>
+      <%= f.input :content, :label => "Jot" %>
+      <%= f.input :course, :collection => @user.courses, :label_method => Proc.new { |a| "#{a.title}" } %>
+    <% end %>
+    <%= image_submit_tag("jots/publish_inactive.png", :id => "submit", :name => "jots/publish_inactive.png", :class => "jots/publish_inactive.png-button", :disabled => false) %>
+  <% end %>
+</div><!--jots-->
+<% content_for :foot do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        $('#submit').hover(
+            function(){ // Change the input image's source when we "roll on"
+                $(this).attr({ src : '/images/jots/publish_active.png'});
+            },
+            function(){ // Change the input image's source back to the default on "roll off"
+                $(this).attr({ src : '/images/jots/publish_inactive.png'});             }
+        );
+    });
+  </script>
+<% end -%>

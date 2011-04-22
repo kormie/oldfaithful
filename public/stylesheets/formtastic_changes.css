@@ -1,0 +1,106 @@
+/* -------------------------------------------------------------------------------------------------
+
+Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
+This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+For example, to make the inline hint paragraphs a little darker in color than the standard #666:
+
+form.formtastic fieldset > ol > li p.inline-hints { color:#333; }
+
+HINT:
+The following style may be *conditionally* included for improved support on older versions of IE(<8)
+form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
+
+--------------------------------------------------------------------------------------------------*/
+
+#user_preferences_left{
+  width: 529px;
+  margin-top:15px;
+}
+#preference_list{
+  border-top:3px solid #008a7a;  
+}
+#preference_list legend{
+  font-weight: bold;
+  font-size: 12px;
+}
+#preference_list form{
+  margin-top:15px;
+}
+#preference_list form input, #preference_list form select, #user_courses_input ol{
+  border:1px solid #959595;
+  padding-top:6px;
+  padding-bottom:7px;
+  padding-left:5px;
+  float:right;
+  font-size: 11px;
+  color:#464646;
+  width:252px;
+}
+#preference_list form select{
+  width:257px;
+  height:25px;
+}
+form.formtastic fieldset > ol > li legend.label label{
+  display:none;
+}
+#preference_list form input[type="checkbox"]{
+  width:8px;
+  border:1px solid #959595;
+}
+#user_courses_input ol{
+  border:none;
+  color:#000;
+}
+#user_birthday_input ol, #user_birthday_input ol li{
+  float:right;
+  padding:0px;
+  margin:0px;
+}
+#user_birthday_input select{
+  width:86px !important;
+}
+input#user_submit.update{
+  float:left;
+  position:absolute;
+  background-color: #fff;
+  left:0px;
+  margin:0;
+  margin-top:-10px;
+  z-index:100;
+  border:none;
+  cursor: pointer;
+  padding:0;
+  width:auto;
+}
+input#user_submit.update:hover{
+  text-decoration:underline;
+}
+#user_courses_input ol li, #user_courses_input ol li label{
+  height:10px !important;
+}
+form.formtastic fieldset > ol > li.text textarea,
+form.formtastic fieldset > ol > li.string input, 
+form.formtastic fieldset > ol > li.password input, 
+form.formtastic fieldset > ol > li.numeric input,
+form.formtastic fieldset > ol > li.email input,
+form.formtastic fieldset > ol > li.url input,
+form.formtastic fieldset > ol > li.phone input,
+form.formtastic fieldset > ol > li.search input { width:98%;
+  border: 1px solid #9b9b9b;
+  padding-top:7px;
+  padding-bottom:6px;
+  padding-left:5px;
+  margin-top:7px;
+  }
+form.formtastic fieldset > ol > li label {
+  font-size: 12px;
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  font-weight:bold;
+}
+form.formtastic fieldset > ol > li.text textarea{
+  font-size:11px;
+}
+#submit{
+  margin-bottom:10px;
+}

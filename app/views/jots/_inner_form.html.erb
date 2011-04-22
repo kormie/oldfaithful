@@ -1,0 +1,9 @@
+<% f.inputs do %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :course, :include_blank => false %>
+  <%= f.input :visibility, :label => 'Save as Draft' %>
+<% end %>
+<% f.buttons do %>
+  <%= image_submit_tag("jots/publish_inactive.png", :id => "jots/publish_inactive.png", :name => "jots/publish_inactive.png", :class => "jots/publish_inactive.png-button", :disabled => false) %>
+<% end %>

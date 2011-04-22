@@ -1,0 +1,56 @@
+<div id="overlay">
+  <div id="header">
+    <%= image_tag "intro/joinjl.gif", :class => "left" %>
+    <%= link_to (image_tag "overlays/x.gif", :class => "right exit"), "#" %>
+  </div><!--header-->
+  <div id="innerhead" class="clearfix">
+    <span class="left"><img src ="images/yourname.gif"></span>
+      <div id="innerheadtext">
+        <%= image_tag "footer/facebook.gif" %>
+        <span class="seven"><%= link_to "Join via Facebook &gt;".html_safe, "http://facebook.com"%></span>
+        <span class="seven"><%= link_to "Jot Locker Login &gt;".html_safe, :action => "index", :class => "seven"%></span>
+      </div>
+  </div><!--innerhead-->
+  <div ="body">
+    <form action="index_submit" method="get" accept-charset="utf-8">
+      <ul>
+        <li>
+          <input type="text" name="name" value="Name" id="name">
+          <label for="name">&lt; First name to personalize your locker</label>
+        </li>
+        <li>
+          <input type="text" name="email" value="Email address" id="email">
+          <label for="email">&lt; Address to log in and verify your account</label>
+        </li>
+        <li>
+          <input type="password" name="password" value="Password" id="password">
+          <label for="password">&lt; Case-sensitive, eight characters minimum</label>
+        </li>
+        <li>
+          <input type="password" name="verify_password" value="Password" id="verify_password">
+          <label for="verify_password">&lt; Re-enter your password</label>
+        </li>
+        <li>
+          <img src="images/captcha.jpg">
+          <label for="enter_captcha">&lt; Enter the letters from this field</label>
+        </li>
+        <li>
+          <input type="text" name="enter_captcha" value="Enter the letters displayed above" id="enter_captcha">
+        </li>
+        <li>
+          <%= image_submit_tag("overlays/join.gif") %>
+        </li>
+      </ul>
+    </form>
+  </div> <!--body-->
+  <div id="footer" class="clearfix">
+    <%= image_tag "logo.png", :width => "66", :height => "74p" %>
+    <p>
+      By clicking "Join the Discussion", you agree to Jot Locker's <a href="#"><%= link_to "User Agreement", "/terms" %></a>
+      and
+      <%= link_to "Privacy Policy", "/privacy" %>
+    </p>
+    <p>&copy; <%= year %> Jot Locker LLC.</p>
+  </div> <!--footer-->
+  </div>
+  <!-- <script type="text/javascript" src="js/overlay.js"></script> -->

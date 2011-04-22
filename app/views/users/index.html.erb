@@ -1,0 +1,83 @@
+<div id="main" class="clearfix">
+  <div id="section1" class="three_col_section">
+    <%= image_tag "locker/section_titles/snapshot.png", :title => "Snapshot", :class => "title" %>
+    <div class="section_head">
+      <div class="avatar_pic">
+        <%= image_tag avatar_url(@user), :title => "Avatar", :id => "avatar" %>
+      </div>
+      <div class="head_content">
+        <p><%= @user.name %></p>
+        <p><%= @user.email%></p>
+        <p class="meta"><%= link_to "Edit", edit_user_registration_path(:anchor => "Personal_Information") %></p>
+      </div>
+    </div><!--.section_head-->
+    <div class="section_content clearfix">
+      <%= image_tag "locker/snapshot/1.gif", :class => "green_icon"%>
+      <ul>
+        <li><%= @user.university_name %></li>
+        <li><%= pluralize(@user.course_count, "course") %></li>
+        <li class="meta">
+        <% if @user.courses.size >= 1 %>
+        <%= link_to "View", courses_path %> / 
+        <% end -%>
+        <%= link_to "Edit", edit_user_registration_path(:anchor => "Courses") %></li>
+      </ul>
+    </div><!--section_content-->
+  </div><!--#section1-->
+  <div id="section3" class="three_col_section">
+      <%= image_tag "locker/section_titles/notebook.png", :title => "Notebook", :class => "title" %>
+    <div class="section_head snap_jot">
+      <% if @user.course_count >= 1 %>
+        <% if @user.jots.length >=1 %>
+          <%= link_to (image_tag "logo.png", :title => "Notebook", :id => "notebook_jot"), jots_path %>
+        <% else %>
+          <%= link_to (image_tag "logo.png", :title => "Notebook", :id => "notebook_jot"), courses_path %>
+        <% end -%>
+      <% else %>
+        <%= image_tag "logo.png", :title => "Notebook", :id => "notebook_jot" %>
+      <% end -%>
+      <div class="head_content">
+        <ul>
+          <li class="bold">Jots</li>
+          <li><%= @user.num_published_jots %> published</li>
+          <li class="meta">
+          <% if @user.course_count >= 1 %>
+            <% if @user.jots.length >=1 %>
+              <%= link_to "View", jots_path %></li>
+            <% else %>
+              <p class="red">You haven't jotted yet</p>
+              <%= link_to "View My Courses", courses_path %></li>
+            <% end -%>
+          <% else %>
+              <%= link_to "Add a course to begin jotting", edit_user_registration_path(:anchor => "Courses") %>
+          <% end -%>
+        </ul>
+      </div>
+    </div><!--.section_head-->
+  </div><!--#section3-->
+</div><!--#main-->
+<% if @user.facebook_id != nil %>
+  <% content_for :foot do %>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <%= javascript_include_tag "jquery.resize.avatar.js"%>
+    <script type="text/javascript" charset="utf-8">
+    var $avatar = $("#avatar")
+      FB.api(
+        {
+          method: 'fql.query',
+          query: 'SELECT pic FROM user WHERE uid=<%= @user.facebook_id %>'
+        },
+        function(response) {
+          $avatar.attr("src", response[0].pic);
+          setTimeout(function(){
+           $avatar.resizeAvatar() 
+          }, 1000);
+        }
+      );
+    </script>
+    <script type="text/javascript" charset="utf-8">
+  
+      
+    </script>
+  <% end %>
+<% end %>

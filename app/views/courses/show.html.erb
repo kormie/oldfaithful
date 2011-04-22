@@ -1,0 +1,44 @@
+<% @breadcrumbs << {:image => "jots", :path => course_path(@course)} %>
+<div id="main" class="clearfix jots">
+  <div id="main_left">
+    <%= image_tag "jots/jots.png", :title => "Jots" %>
+    <div id="jots">
+      <% if @jots.size >= 1 %>
+        <% @jots.each do |jot| %>
+        <div class="jot">
+
+           <% if jot.users.include?(@user) %>
+
+            <h3><%= link_to jot_title(jot).capitalize, course_jot_path(@course, jot), :class => "red" %></h3>
+
+          <% else %>
+
+            <h3><%= link_to jot_title(jot).capitalize, course_jot_path(@course, jot) %></h3>
+
+          <% end -%>
+
+          <p><%= link_to shorten_jot(jot).capitalize, course_jot_path(@course, jot) %></p>
+
+          <p class="meta">
+            <%=  date_at_time(jot.updated_at).upcase %> (GMT) /
+            <% if jot.uniq_users.size >=1 %>
+
+              <% jot.most_recent_user.each do |u| %>
+                <%= u.cap_email + " / " + pluralize(jot.uniq_users.size, "JOTTER").upcase %>
+              <% end -%>
+            <% end -%>
+          </p>
+        </div><!--jot-->
+        <% end %>
+      <% else %>
+        <h3><%= "Sorry, #{course_name(@course)} doesn't have any Jots at the moment" %></h3>
+        <p class="meta">
+        <%= link_to "New #{@course.title} Jot", new_course_jot_path(@course) %>
+         / 
+        <%= link_to "My Courses", courses_path %> / <%= link_to "My Locker", users_index_path %>
+        </p>
+      <% end %>
+    </div><!--jots-->
+  </div><!--main_left-->
+  <%= render :partial => "shared/right_sidebar" %>
+</div>

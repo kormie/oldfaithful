@@ -1,0 +1,12 @@
+span.underline{
+  text-decoration:underline;
+}
+
+.printhide{
+  display:none;
+}
+
+a{
+  color:#000;
+  font-weight:bold;
+}

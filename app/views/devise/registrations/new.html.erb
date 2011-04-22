@@ -1,0 +1,43 @@
+<div id="overlay">
+  <div id="header">
+    <%= image_tag "overlays/join_text.png", :class => "left" %>
+    <%= link_to (image_tag "overlays/x.gif", :class => "right exit", :id => "close_button"), root_url %>
+  </div><!--header-->
+  <div id="innerhead" class="clearfix">
+    <span class="left"><%= image_tag "overlays/your_username.png" %></span>
+      <div id="innerheadtext">
+        <%= hide(image_tag "footer/facebook.gif") %>
+        <span class='seven'> 
+          <%= image_tag "footer/facebook.gif", :title => "Facebook", :id => "fbookicon" %>
+          <%= link_to 'Join via Facebook &gt;'.html_safe, user_omniauth_authorize_path(:facebook) %>
+        </span>
+        <span class="seven">
+          <%= link_to "Jot Locker Login &gt;".html_safe, {:controller => "/intro", :action => "index"}, :class => "seven"%>
+        </span>
+      </div>
+  </div><!--innerhead-->
+  <div ="body">
+    <div class="clearfix">
+      <%= semantic_form_for @user, :url => registration_path(@user) do |f| %>
+        <%= f.inputs do %>
+          <%= f.input :name %>
+          <%= f.input :email %>
+          <%= f.input :password %>
+          <%= f.input :password_confirmation %>
+          <%= f.input :birthday, :start_year => DateTime.now.year-70, :end_year => DateTime.now.year-13, :label => "Birthday*" %>
+        <% end %>
+        <%= image_submit_tag("overlays/join.gif", :id => "submit") %>
+      <% end %>
+    </div>
+  </div> <!--body-->
+  <div id="footer" class="clearfix">
+    <%= image_tag "logo.png", :width => "66", :height => "74p" %>
+    <div>
+      <p>By clicking "Join the Discussion", you agree to Jot Locker's 
+      <%= link_to "User Agreement", "/terms" %>
+      and
+      <%= link_to "Privacy Policy", "/privacy" %></p>
+      <p>&copy; <%= year %> Jot Locker LLC.</p>
+    </div>
+  </div> <!--footer-->
+</div><!--overlay-->

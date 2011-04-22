@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <%= render :partial => "shared/head_tag" %>
+  <body>
+  
+    <div id="wrapper">
+
+      <%= render :partial => "shared/header" %>
+      
+      <div id="three_big_pics" class="short clearfix">
+
+        <%= image_tag "top_image/short/#{1 + rand(10)}.jpg" %>
+        
+        <%= render :partial => 'shared/color_navtabs' %>
+
+      </div>
+
+      <%= yield %>
+
+      <%= render :partial => 'shared/footer' %>
+  
+    </div><!--wrapper-->
+    
+    <%= javascript_include_tag 'jquery', 'jquery-ui', 'application', :cache => true %>
+    <%= yield :foot %>
+  </body>
+</html>

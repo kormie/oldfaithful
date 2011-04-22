@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Jot Locker
+    </title>
+    <%= stylesheet_link_tag "intro", "overlay", :cache => false %>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20913356-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </head>
+  <body>
+    
+    <%= yield %>
+
+    <%= javascript_include_tag ["jquery.min", "jquery-ui.min", "introanimation", "jquery.tools.min", "jquery.simplemodal-1.4.1"], :cache => false %>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function(){
+            $('#submit').hover(
+                function(){ // Change the input image's source when we "roll on"
+                    $(this).attr({ src : '/images/overlays/join_hover.gif'});
+                },
+                function(){ // Change the input image's source back to the default on "roll off"
+                    $(this).attr({ src : '/images/overlays/join.gif'});             
+              });
+            
+            $('#register_new_user').click(function(e){
+              e.preventDefault();
+              $.modal('<div id="remoteDiv" height="450" width="575" style="border:0; overflow=hidden;">', {
+                onOpen: function (dialog) {
+                    dialog.overlay.fadeIn('slow', function () {
+                        dialog.container.slideDown('slow', function () {
+                            dialog.data.fadeIn('slow');
+                        });
+                    });
+                },    onClose: function (dialog) {
+                        dialog.data.fadeOut('slow', function () {
+                            
+                        });
+                        dialog.overlay.fadeOut('fast', function () {
+                            $.modal.close(); // must call this!
+                        });
+                    },
+                closeHTML:"",
+                opacity:80,
+                overlayCss: {backgroundColor:"rgba(0,0,0,.6)"},
+                containerCss:{
+                backgroundColor:"#fff",
+                borderColor:"#fff",
+                height:450,
+                padding:0,
+                width:575
+              },
+              overlayClose:true
+            });
+            $('#remoteDiv').load("<%= new_user_registration_path %> #overlay", function(){
+              $('#overlay').css('margin-top', '0');
+              $("#close_button").click(function(e){
+                e.preventDefault();
+                $.modal.impl.close();
+              });
+            });
+            
+          });
+      });
+    </script> 
+  </body>
+</html>

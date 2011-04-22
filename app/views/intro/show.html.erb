@@ -1,0 +1,25 @@
+<div id="overlay">
+  <div id="header">
+    <span class="left"><%= image_tag "overlays/explore.png" %></span>
+    <%= image_tag "overlays/x.gif", :class => "right xbutton" %>
+  </div> <!--header-->
+  <div id="innerhead">
+    <span class="left"><%= image_tag "overlays/your_locker.png", :title => "title", :class => "class" %></span>
+    <%= hide(image_tag "footer/facebook.gif", :class => "exploreright") %>
+    <span class="exploreright seven"><%= hide(link_to "Customize via Facebook", "http://facebook.com") %></span>
+  </div> <!--innerhead-->
+  <div id="body" class="clearfix">
+    <div class="bold">
+      <p><%= current_user.first_name %>'s locker is your domain for self-expression, to aid you in defining and enriching your educational experience.</p>
+    </div><!--bold-->
+    <div id="light exploreright">
+      <p><%= current_user.first_name %>'s locker connects you to the entire Jot Locker community, and contains your personal jots and organizational tools.</p>
+      <p class="first"><a href="#">Explore <%= current_user.first_name %>'s Locker &gt;</a></p>
+      <p class="last"><a href="#">Customize <%= current_user.first_name %>'s Locker &gt;</a></p>
+    </div>
+  </div><!--body-->
+  <div id="footer" class="clearfix">
+    <%= image_tag "logo.png", :width => "40", :height => "46" %><!-- use smaller img -->
+    <p id="copyright">&copy; <%=year%> Jot Locker LLC.</p>
+  </div> <!--footer-->
+</div><!--overlay-->#{current_user.first_name}

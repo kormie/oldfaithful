@@ -1,0 +1,32 @@
+<% @breadcrumbs << {:image => "detail"}%>
+
+<div id="main" class="clearfix jots">
+  <div id="main_left" class="detail_content">
+  <%= image_tag "jots/jots.png", :title => "Jots" %>
+    <div id="jots">
+    <h3><%= @jot.title %></h3>
+    <h4><%= link_to "Edit", edit_course_jot_path(@course, @jot) %></h4>
+    <p class="meta">
+    <% @jot.most_recent_user.each do |user| %>
+      <%= user.cap_email %> / 
+    <% end %>
+    <%= date_at_time(@jot.updated_at).upcase %> (GMT)
+    <% if @jot.num_users >= 1 %>
+     / <%= pluralize(@jot.num_users, "JOTTER").upcase%>
+    <% end %></p>
+    <%= simple_format(@jot.content) %>
+    <div id="tags" class="detail_foot">
+      <span>Tags</span> /<span class="meta" style="font-style:italic; color:#a1a1a1; font-size:9px; text-transform:uppercase;"> (coming soon...)</span>
+    </div>
+    <div id="jotters" class="detail_foot">
+      <span>Jotters</span> / 
+      <% @jot.uniq_recent_users.each do |user| %>
+        <%= user.cap_email + ", " %>
+      <% end %>
+    </div>
+    </div><!--jots-->
+  </div><!--main_left-->
+
+  <%= render :partial => "shared/right_sidebar" %>
+
+</div>

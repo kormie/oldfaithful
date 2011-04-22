@@ -1,0 +1,40 @@
+<div id="container">  
+  <!--text image exported as a png-8-->
+  <!--other images exported as jpeg medium-->
+  <div id="intro">
+    <%= image_tag "intro/bw/group4.jpg" %>
+            <%= image_tag "intro/bw/group3.jpg" %>
+            <%= image_tag "intro/bw/group5.jpg" %>
+            <%= image_tag "intro/bw/group2.jpg" %>
+            <%= image_tag "intro/bw/group1.jpg" %>
+    
+  </div><!-- end of intro -->
+  <div id="text">
+    <%= link_to  (image_tag 'intro/text.png'), new_user_registration_path, :id => "signuplink" %>
+    <%= link_to (image_tag "intro/twitter.png"), new_user_registration_path %>
+    <p>&copy; <%= year %> Jot Locker LLC</p>
+  </div>
+  <div id="introheader">
+    <div id="logo">
+      <%= image_tag "logo.png", :title => "Jot Locker" %>
+    </div><!-- end of logo -->
+    <div id="login">
+
+      <span class="notice">
+        <%=link_to 'Register &gt;'.html_safe, new_user_registration_path, :class => "violator", :id => "register_new_user" %>
+        <%=link_to 'Reset Password &gt;'.html_safe, new_user_password_path, :class => "violator" %>
+      </span>
+        <span class="email">Email</span><span class="password">Password</span>
+      <% if notice || alert %>
+      <span class="notice">Email or Password invalid.</span>
+      <% end -%>
+      <%= form_for("user", :url => user_session_path) do |f| %>
+        <%= f.text_field :email%>
+
+        <%= f.password_field :password %>
+
+        <%= f.submit "Sign in" %>
+      <% end %>
+    </div><!-- end of login -->
+  </div><!-- end of introheader -->
+</div><!-- end of container -->

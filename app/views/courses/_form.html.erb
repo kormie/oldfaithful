@@ -1,0 +1,23 @@
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= semantic_form_for @course do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :department, :label => "Department Name", :hint => "History" %>
+    <%= f.input :number, :label => "Course Number", :hint => "101" %>
+    <%= f.input :name, :label => "Course Name", :hint => "Introduction to Historical Analysis" %>
+    <%= f.input :professor, :label => "Course Professor", :hint => "Charles Xavier" %>
+    <%= f.input :term, :label => "Course Term", :hint => "Spring #{year}", :collection => ["Winter 2011", "Spring 2011"] %>
+    <%= f.input :description, :label => "Course Description", :input_html => { :rows => 5 } %>
+  <% end %>
+  <%= f.buttons %>
+<% end %>

@@ -1,0 +1,7 @@
+<% column.each do |course| %>
+  <div class="course">
+    <h3><%= link_to course_name(course), course  %></h3>
+    <p><%= pluralize(course.jots.length, "Jot") %></p>
+    <p class="meta"><%= course_jot_links(course) %></p>
+  </div><!--course 1-->
+<% end %> 

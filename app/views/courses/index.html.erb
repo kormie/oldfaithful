@@ -1,0 +1,24 @@
+<div id="main" class="clearfix courses" style="margin-top:20px;">
+  <div id="course_png">
+    <%= image_tag "jots/courses.png", :title => "Courses" %>
+  </div>
+    <% if @user.courses.size >= 1 %>
+      <div class="courses_column">
+        <%= render :partial => 'two_course_column', :locals => { :column => @column1} %>
+      </div><!--courses-->
+      <% if @user.courses.size >= 3 %>
+        <div class="courses_column" id="second_course_column">
+          <%= render :partial => 'two_course_column', :locals => { :column => @column2} %>
+        </div><!--courses-->
+        <% if @user.courses.size >= 5 %>
+          <div class="courses_column" id="third_course_column">
+            <%= render :partial => 'two_course_column', :locals => { :column => @column3} %>
+          </div><!--courses-->
+        <% end %>
+      <% end %>  
+      
+    <% else %>
+      <%= link_to "Add a course to begin Jotting", edit_user_registration_path(:anchor => "Courses") %>
+    <% end %>
+</div><!--main-->
+

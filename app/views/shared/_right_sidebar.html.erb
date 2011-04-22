@@ -1,0 +1,41 @@
+<div id="main_right">
+  <%= link_to(image_tag "jots/courses.png") %>
+  <%= link_to (image_tag "jots/arrow.png"), '#' , :id => "expand_arrow", :class => "hover_arrow" %>
+  <div id="courses">
+      <div id="current_course" class="course">
+        <h3><%= @course.name %></h3>
+        <p class="meta">
+          <%= @course.professor %>
+        </p>
+        <p class="meta">
+          <% if (@course.num_jots == 1) %>
+            <%= new_course_jot_links(@course) %>
+          <% else %>
+            <%= course_jot_links(@course)%>
+          <% end %>
+        </p>
+      </div>
+    <div id="not_current_wrap">
+      <% @courses.each do |course| %>
+      <div class="course not_current">
+        <h3><%= link_to course.name, course_path(course) %></h3>
+        <p><%= pluralize(course.num_jots, " Jot") %></p>
+        <p class="meta"><%= course_jot_links(course) %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="ads">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-4791985966634135";
+    /* ads */
+    google_ad_slot = "4592538321";
+    google_ad_width = 250;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+</div>

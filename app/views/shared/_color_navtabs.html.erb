@@ -1,0 +1,10 @@
+<div id="discuss" class="color_navtab">
+  <p><%= nav_link(@breadcrumbs ||= [], :top => true) %></p>
+  <p><%= nav_link(@nav_spots, :color => "red") %></p>
+</div>
+<div id="share" class="color_navtab">
+  <%= hide(link_to (image_tag "color_navtabs/search_text/search/orange.png", :title => "Search"), "#") %>
+</div>
+<div id="search" class="color_navtab">
+  <%= hide(link_to (image_tag "color_navtabs/share_text/share/orange.png", :title => "Share"), "#") %>
+</div>

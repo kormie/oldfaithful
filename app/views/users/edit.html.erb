@@ -1,0 +1,52 @@
+<div id="main" class="clearfix">
+  <div id="user_preferences_left">
+    <%= image_tag "locker/preferences/preferences.png", :title => "title", :class => "class" %>
+    <div id="preference_list">
+      <%= semantic_form_for @user, :url => registration_path(@user) do |f| %>
+      <div class="form_wrap">
+        <a name="Personal_Information"></a>
+        <%= f.inputs "Personal Information" do %>
+          <%= f.input :name, :label => false %>
+          <%= f.input :email, :label => false %>
+        <% end %>
+        <%= f.buttons do %>
+          <%= f.commit_button 'Save Revisions' %>
+        <% end %>
+      </div>
+      <div class="form_wrap">
+        <a name="Password"></a>
+        <%= f.inputs :name => 'Password' do %>
+          <%= f.input :password, :label => false %>
+          <%= f.input :password_confirmation, :label => false %>
+        <% end %>
+        <%= f.buttons do %>
+          <%= f.commit_button 'Save Revisions' %>
+        <% end %>
+      </div>
+      <div class="form_wrap">
+        <a name="University"></a>
+        <%= f.inputs :name => 'University' do %>
+          <%= f.input :university, :label => false, :include_blank => true %>
+        <% end %>
+        <%= f.buttons do %>
+          <%= f.commit_button 'Save Revisions' %>&nbsp;<%= link_to "/ Request My University", "mailto:contact@jotlocker.com", :class => "box_link" %>
+        <% end %>
+      </div>
+        <% if @user.university %>
+        <div class="form_wrap">
+          <a name="Courses"></a>
+          <%= f.inputs :name => 'Courses / Class Sessions' do %>
+            <%= f.input :courses, :label_method => Proc.new { |a| "#{a.title}" },  :as => :check_boxes, :collection => @user.university.all_courses %>
+          <% end %>
+          <br />
+          <br />
+          <%= f.buttons do %>
+            <%= f.commit_button 'Save revisions' %><%= link_to " / Create New Course", new_course_path, :class => "box_link" %>
+          <% end %>
+        </div>
+        <% end -%>
+      <% end %>
+    </div>
+  </div>
+</div><!--#main-->
+</div>

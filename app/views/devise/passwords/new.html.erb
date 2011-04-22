@@ -1,0 +1,21 @@
+<div id="overlay">
+  <div id="header">
+    <h2 class="left">Forgot your password?</h2>
+    <%= link_to (image_tag "overlays/x.gif", :class => "right exit"), root_url %>
+  </div>
+  <div id="body">
+    <br />
+    <% semantic_form_for(@user, :url => password_path(@user), :html => {:method => :post}) do |f| %>
+      <%= f.inputs do %>
+        <%= f.input :email, :label => 'Email' %>
+      <% end %>
+      <%= f.commit_button "Send me reset password instructions" %>
+    <% end %>
+  </div>
+  <div id="footer" class="clearfix">
+    <%= image_tag "logo.png", :width => "66", :height => "74p" %>
+    <div>
+      <p>&copy; <%= year %> Jot Locker LLC.</p>
+    </div>
+  </div> <!--footer--> 
+</div>

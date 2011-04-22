@@ -1,0 +1,18 @@
+<% @breadcrumbs << {:image => "edit_jot"} %>
+
+<div id="main" class="clearfix jots">
+  
+  <div id="main_left" class="detail_content">
+    
+    <%= image_tag "jots/jots.png", :title => "Jots" %>
+        
+
+      <%= render 'form' %>
+
+    
+  </div><!--main left-->
+
+  <%= render :partial => "shared/right_sidebar" %>
+  
+  </div>
+

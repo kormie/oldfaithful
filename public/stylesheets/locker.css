@@ -1,0 +1,500 @@
+/*yellow: #F9ED43
+                                  
+teal: #008a7a          
+                                  
+red: #b02a30*/              
+
+/*General Styles and Resets*/
+
+    body{
+      padding:0;
+      margin:0;
+      font-family:Arial, Helvetica, Verdana, sans-serif;
+    }
+    #wrapper{
+      position:relative;
+      width:960px;
+      margin:0px auto auto;
+      top:0px;
+    }
+    img{
+      border:0;
+      outline:0;
+      margin:0;
+      padding:0;
+    }
+    a{
+      text-decoration:none;
+      color:#000;
+    }
+    .bold{
+      font-weight:bold;
+    }
+    .meta, .meta a, #courses .course.not_current .meta a,  #courses .course.not_current p.meta{
+      font-size:11px;
+      color:#636363;
+    }
+    .asterisk{
+      vertical-align: 50%;
+    }
+    .meta a:hover{
+      text-decoration:underline;
+    }
+
+    /*Text Colors*/
+
+        .yellow{
+          color:#F9ED43  !important;
+        }
+        .teal{
+          color:#008a7a !important;
+        }
+        .red{
+          color:#b02a30 !important;
+        }
+        .white{
+          color:#fff;
+        }
+
+/*Header*/
+
+  #header{
+    position:relative;
+    height:60px;
+    background:#008a7a;
+  }
+  
+    #header p.notice, #header p.alert{
+      font-size: 11px;
+      color:#F9ED43;
+      text-align:center;
+      padding-top:20px;
+      margin:0;
+    }
+
+      #header #large_header_logo{
+        position:absolute;
+        background:url('/images/sprite.png') no-repeat;
+        background-position: -10px -10px;
+        z-index:5000;
+        top:11px;
+        left:73px;
+        width:127px;
+        height:143px;
+        text-indent:-9000px;
+      }
+      
+      #header #header_links{
+        position:absolute;
+        font-size:11px;
+        right:116px;
+        top:20px;
+      }
+      
+          #header #header_links a{
+            color:#000;
+          }
+          #header #header_links a, #header #header_links span{
+            padding:0 6px;
+          }
+          #header #header_links p{
+            margin:5px 0 3px;
+          }
+
+/*Picture Section*/
+
+  #three_big_pics{
+    position:relative;
+  }
+
+      #three_big_pics > img{
+        float:left;
+      }
+
+      #three_big_pics div.color_navtab{
+        background:url('/images/sprite.png') no-repeat;
+        position:absolute;
+        width:259px;
+        height:50px;
+        top:280px;
+      }
+      #three_big_pics.short div.color_navtab{
+        top:124px;
+      }
+
+          #three_big_pics div.color_navtab#discuss{
+            background-position: -10px -173px;
+            left:74px;
+          }
+
+          #three_big_pics div.color_navtab img{
+            margin:4px 0 0 4px;
+          }
+          
+          #three_big_pics div.color_navtab img:nth-child(1){
+            margin-left:8px;
+          }
+
+          #three_big_pics div.color_navtab p{
+            margin:0;
+          }
+          
+          #three_big_pics div.color_navtab a:nth-child(2) img{
+            margin-left:4px;
+          }
+
+          #three_big_pics div.color_navtab#share{
+            background-position: -10px -243px;
+            left:350px;
+          }
+
+          #three_big_pics div.color_navtab#search{
+            background-position: -10px -313px;
+            left:620px;
+          }
+          
+/*Main Content*/
+
+#main{
+  position:relative;
+  width:800px;
+  margin:auto;
+}
+  #main div.three_col_section{
+    width:253px;
+    float:left;
+    margin-top:19px;
+  }
+  #main div#section2{
+    margin-left:24px;
+  }
+  #main div#section3{
+    margin-left:17px;
+  }
+  
+  /*Section Headers*/
+  
+    .avatar_pic{
+      width:80px;
+      height:80px;
+      overflow: hidden;
+    }
+  
+    #main div div.section_head{
+      border-top:3px solid #008a7a;
+      border-bottom:3px solid #008a7a;
+      height:80px;
+    }
+      #main div div.section_head div.head_content{
+        margin-top:-79px;
+        margin-left:90px;
+      }
+      #main div#section2 div.section_head div.head_content{
+        margin-top:-75px;
+      }
+        #main div div.section_head div.head_content p, #main div div.section_head div.head_content p.meta a{
+          margin:0;
+          font-size:12px;
+          padding-top:3px;
+        }
+      #main div#section2 #day_number{
+        font-size: 71px;
+        font-weight: bold;
+        font-family: Times New Roman, Times, serif;
+        line-height:68px;
+        
+      }
+      #main div#section2 #dates{
+        text-align:center;
+        width:90px;
+        height:80px;
+      }
+      #main div#section2 #dates p{
+        font-size:9px;
+        margin:-5px 0 0 0;
+      }
+
+  /*Section Content*/
+
+  #main div.section_content{
+    border-bottom:2px solid #e1e1e1;
+    padding-bottom:14px;
+  }  
+  #main div.section_content .green_icon{
+    float:left;
+    padding-left:2px;
+    margin-top:12px;
+  }
+  #main div.section_content ul, #main div.section_head ul{
+    list-style:none;
+    font-size:12px;
+    display: inline;
+    float:left;
+    padding:0;
+    margin:13px 0 0 10px;
+  }
+  .snap_jot{
+    padding:4px 0 8px 0;
+  }
+  #main div.snap_jot ul{
+    margin:0px;
+  }
+  #notebook_jot{
+    width:77px;
+    height:85px
+  }
+
+/*Footer*/
+#footer{
+  width:960px;
+  font-size: 11px;
+}
+    #footer ul{
+      list-style:none;
+      padding-left:0;
+      margin:25px 143px 25px 0;
+      float:right;
+    }
+        #footer ul li{
+          float:left;
+          margin-right:5px;
+          padding-top:7px;
+        }
+        #footer ul li:nth-child(2), #footer ul li:nth-child(3), #footer ul li:nth-child(4){
+          background:url('/images/sprite.png') no-repeat;
+        }
+            #footer ul li:nth-child(2){
+              background-position: -10px -383px;
+            }
+            #footer ul li:nth-child(3){
+              background-position: -10px -420px;
+            }
+            #footer ul li:nth-child(4){
+              background-position: -10px -457px;
+            }
+            
+            #footer ul li a{
+              display:block;
+              text-indent: -9000px;
+              width:100%;
+              height:100%;
+              width:17px;
+              height:17px;
+              margin-top:-7px;
+            }
+            
+/*Jots*/
+
+#main.jots{
+  margin-top:15px;
+}
+
+#main.jots #main_left{
+  width:526px;
+  float:left;
+  margin-top:15px;
+}
+
+#main.jots div#jots{
+  border-top:3px solid #b02a30;
+  border-bottom:3px solid #b02a30;
+}
+
+#main.jots h3{
+  font-size: 16px;
+  font-weight: bold;
+  margin:8px 0 4px;
+}
+
+#main.jots h4, #main.jots h4 a{
+  display:inline;
+  float:right;
+  margin:-13px 0 0 0;
+  padding:0;
+  color:#636363;
+  font-size: 12px;
+}
+
+#main.jots h3 a{
+  color:#000;
+}
+
+#main.jots p{
+  margin:0 0 5px;
+  font-size: 12px;
+}
+
+#main.jots #main_left div#jots div.jot{
+  border-bottom:2px solid #e1e1e1;
+  padding-bottom:5px;
+}
+#main.jots #main_left div#jots div.jot:last-child{
+  border-bottom:none;
+}
+
+#main.jots #main_left p.meta{
+  color:#a1a1a1;
+  font-size: 9px;
+}
+
+#main.jots #main_right{
+  float:right;
+  width:253px;
+  margin-top:15px;
+}
+
+#expand_arrow{
+  float:right;
+}
+#main.jots #expand_arrow:hover:before{
+  content: url(/images/jots/expand.png);
+}
+
+/*Course*/
+
+#main.jots #main_right #courses{
+  border-top:3px solid #b02a30;
+  border-bottom:3px solid #b02a30;
+}
+#main.jots #main_right #courses .not_current h3 a, #main.jots #main_right #courses .not_current{
+  font-size: 11px;
+  font-weight: normal;
+  color: #b02a30;
+}
+/*none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset*/
+#main.jots #main_right #courses .course{
+  padding-bottom: 4px;
+  border-top: 2px dotted #e1e1e1;
+}
+#main.jots #main_right #courses .course:last-child, #main.courses .courses_column .course:last-child{
+  border-bottom: none;
+}
+
+/*Courses*/
+#main.courses .courses_column .course p.meta, #main.courses p.meta a{
+  font-size: 11px;
+  color:#636363;
+}
+
+#main.courses .courses_column .course p, #main.courses .courses_column .course h3{
+  margin:0;
+  font-size:12px;
+}
+#main.courses .courses_column .course h3{
+  font-weight: bold;
+}
+#main.courses .courses_column .course{
+  padding:5px 0;
+  border-bottom:2px solid #e1e1e1;
+}
+#main.courses .courses_column{
+  border-top:3px solid #b02a30;
+  border-bottom:3px solid #b02a30;
+  width:253px;
+  float:left;
+  margin-left:20px;
+}
+#main.courses .courses_column:nth-child(2){
+  margin-left:0;
+}
+#course_png{
+  width:100%;
+}
+#main.jots #main_right #courses #current_course h3{
+  font-size: 12px;
+  font-weight: bold;
+}
+/*none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset*/
+#main.jots #main_right #courses #current_course{
+  padding-bottom: 4px;
+  border-top: none;
+}
+
+
+
+/*Pagination*/
+.hover_arrow.disabled{
+  display:none;
+}
+#pagination{
+  display:inline-block;
+  float:right;
+}
+#main.jots #next_arrow:hover:before{
+  content: url(/images/jots/next.png);
+}
+#main.jots #previous_arrow:hover:after{
+  content: url(/images/jots/previous.png);
+}
+#main.jots .hover_arrow{
+  padding-left:2px;
+}
+
+/*Detail*/
+  .detail_foot{
+    font-size:11px;
+    color:#464646;
+    margin-top:7px;
+    padding-top:7px;
+    border-top: 2px solid #e1e1e1;
+  }
+  .detail_foot#jotters{
+    padding-bottom:7px;
+  }
+  .detail_foot span{
+    font-weight:bold;
+    color:#000;
+  }
+  
+  
+  a.box_link{
+    position:absolute;
+    margin-left:-66px;
+    margin-top:-16px;
+    color:#464646;
+    background:white;
+    padding:6px 0px 7px 0px;
+    font-size:11px;
+    text-align:center;
+  }
+  a.box_link:hover{
+    text-decoration: underline;
+  }
+
+.right_scroll{
+  position:fixed;
+  margin-top:30px;
+  padding-left:70px;
+  z-index:-1;
+}
+.right_scroll a:hover{
+  text-decoration: underline;
+}
+.right_scroll .back_logo{
+  width:62px;
+  height:69px;
+}
+
+#right_bar{
+  position:relative;
+  width:271px;
+  height:100%;
+  height:865px;
+  float:right;
+  z-index:200;
+  overflow:hidden;
+}
+
+.form_wrap{
+    border-bottom:2px solid #e1e1e1;
+    margin-bottom:15px;
+}
+
+.ads{
+  position:relative;
+  margin:auto;
+  width:250px;
+  height:250px;
+  border-bottom:3px solid #b02a30;
+  padding:5px 0;
+}
