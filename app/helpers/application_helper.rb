@@ -88,18 +88,4 @@ module ApplicationHelper
     jot += " / "
     jot += link_to "View", course
   end
-  def old_view_cjl
-    jot = link_to "View all", course
-    jot += " / "
-    jot += link_to pub_count(course), course_path(course.id, :limit => "published")
-    jot += " / "
-    jot += link_to draft_count(course), course_path(course.id, :limit => "drafted")
-  end
-  def old_new_cjl
-    jot = link_to "New", new_course_jot_path(course)
-    jot += " / "
-    jot += link_to pub_count(course), course_path(course.id, :limit => "published")
-    jot += " / "
-    jot += link_to draft_count(course), course_path(course.id, :limit => "drafted")
-  end
 end
