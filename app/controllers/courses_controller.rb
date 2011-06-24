@@ -10,9 +10,9 @@ class CoursesController < ApplicationController
 
   def index
     @courses = @user.courses.order("name ASC")
-    @column1 = @courses.shift(2)
-    @column2 = @courses.shift(2)
-    @column3 = @courses
+    @column1 = @courses.limit(2)
+    @column2 = @courses.limit(2).offset(2)
+    @column3 = @courses.offset(4)
     @page_title = "#{current_user.first_name}'s Courses"
     @welcome_message = "#{@user.name}'s Courses"
     @breadcrumbs = [{:image => "jot_locker", :path => courses_path}]
@@ -25,7 +25,6 @@ class CoursesController < ApplicationController
     @jots = @course.jots.order("updated_at DESC")
     @page_title = "#{@course.name}"
     @welcome_message = @page_title
-    @breadcrumbs.push({:disc => "jots", :web => course_path(@course)})
     
     respond_to do |format|
       format.html # show.html.erb
@@ -93,7 +92,14 @@ class CoursesController < ApplicationController
   private
   
   def breadcrumbs
-    @breadcrumbs =[{:disc => "jot_locker/arrow", :web => courses_path}]
+    @breadcrumbs =[{:image => "jot_locker/arrow", :path => courses_path}]
   end
+  
+
+  
+  
+  
+  
+  
   
 end
