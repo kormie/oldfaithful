@@ -24,14 +24,13 @@ class ApplicationController < ActionController::Base
     end
     
     def nav_spots
-      nav_spots = []
-      unless @courses.nil?
-        nav_spots = [{:disc => "my_jots/slash", :web => courses_path}] 
-        nav_spots << {:disc => "new_jot", :web => new_course_jot_path(@course ||= @user.courses.first)}
+      if @courses != nil
+        @nav_spots = [{:image => "my_jots/slash", :path => courses_path}] 
+        @nav_spots << {:image => "new_jot", :path => new_course_jot_path(@course ||= @user.courses.first)}
       else
-        @nav_spots = [{:disc => "my_jots", :web => jots_path }]
+        @nav_spots = [{:image => "my_jots", :path => jots_path }]
       end
-      @nav_spots
+      return @nav_spots
     end
     
 
