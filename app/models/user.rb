@@ -42,17 +42,17 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :university_id, :course_ids, :birthday, :course, :facebook_id
   attr_accessor :university_name
   attr_accessor :published
-  
+
    def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['user_hash']
     fbid = access_token['uid']
-    if user = User.find_by_email(data["email"])
+    if user == User.find_by_email(data["email"])
       user
     else # Create an user with a stub password.
       User.create!(:email => data["email"], :name => data["name"], :password => Devise.friendly_token[0,20], :facebook_id => fbid) 
     end
   end
-  
+
   def after_update_path
       users_path
   end
@@ -60,10 +60,10 @@ class User < ActiveRecord::Base
     if params[:password].blank? 
       params.delete(:password) 
       params.delete(:password_confirmation) if params[:password_confirmation].blank? 
-    end 
+    end
     update_attributes(params) 
   end
-  
+
   def self.order_recent
     order("updated_at DESC")
   end
@@ -76,7 +76,7 @@ class User < ActiveRecord::Base
   def self.most_recent
     order_recent.limit(1)
   end
-  
+
   def cap_email
     email.upcase
   end

@@ -12,15 +12,15 @@
 class University < ActiveRecord::Base
   has_many :users
   has_many :departments
-  
+
   def all_courses
     all_courses = Array.new
-    for department in departments
+    departments.each do |department|
       department.courses.each do |course|
         all_courses << course
       end
     end
     all_courses.flatten
   end
-  
+
 end

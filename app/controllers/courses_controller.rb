@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
     @jots = @course.jots.order("updated_at DESC")
     @page_title = "#{@course.name}"
     @welcome_message = @page_title
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @course }

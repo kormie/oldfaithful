@@ -16,8 +16,9 @@ gem "oa-oauth"
 gem 'rails-footnotes', '>= 3.7', :group => :development
 
 group :development, :test do
-  gem 'webrat'
+  gem 'capybara'
   gem "rspec-rails", "~> 2.4"
   gem "ZenTest", "~> 4.4.2"
   gem "annotate-models"
+  gem "cucumber-rails"
 end
