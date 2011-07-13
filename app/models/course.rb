@@ -23,7 +23,7 @@ class Course < ActiveRecord::Base
             :format => { :with => /^[1-9][0-9]{2}([-][0-9]{1})?$/i }
   validates_presence_of :professor, :message => "can't be blank"
   validates_presence_of :name, :message => "can't be blank"
-  validates_presence_of :department, :on => :create, :message => "can't be blank"
+  validates_presence_of :department_id, :on => :create, :message => "can't be blank"
   
   def published_jots
     jots.published
