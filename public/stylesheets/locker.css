@@ -1,10 +1,10 @@
-/*yellow: #F9ED43
-                                  
-teal: #008a7a          
-                                  
-red: #b02a30*/              
+/* yellow: #F9ED43 */
 
-/*General Styles and Resets*/
+/* teal: #008a7a */
+
+/* red: #b02a30 */
+
+/* General Styles and Resets */
 
     body{
       padding:0;
@@ -14,8 +14,8 @@ red: #b02a30*/
     #wrapper{
       position:relative;
       width:960px;
-      margin:0px auto auto;
-      top:0px;
+      margin:0 auto auto;
+      top:0;
     }
     img{
       border:0;
@@ -64,7 +64,7 @@ red: #b02a30*/
     background:#008a7a;
   }
   
-    #header p.notice, #header p.alert{
+    #header .notice, #header .alert{
       font-size: 11px;
       color:#F9ED43;
       text-align:center;
@@ -122,7 +122,7 @@ red: #b02a30*/
         top:124px;
       }
 
-          #three_big_pics div.color_navtab#discuss{
+          #three_big_pics .color_navtab#discuss{
             background-position: -10px -173px;
             left:74px;
           }
@@ -143,12 +143,12 @@ red: #b02a30*/
             margin-left:4px;
           }
 
-          #three_big_pics div.color_navtab#share{
+          #three_big_pics .color_navtab#share{
             background-position: -10px -243px;
             left:350px;
           }
 
-          #three_big_pics div.color_navtab#search{
+          #three_big_pics .color_navtab#search{
             background-position: -10px -313px;
             left:620px;
           }
@@ -160,15 +160,15 @@ red: #b02a30*/
   width:800px;
   margin:auto;
 }
-  #main div.three_col_section{
+  .three_col_section{
     width:253px;
     float:left;
     margin-top:19px;
   }
-  #main div#section2{
+  #section2{
     margin-left:24px;
   }
-  #main div#section3{
+  #section3{
     margin-left:17px;
   }
   
@@ -189,7 +189,7 @@ red: #b02a30*/
         margin-top:-79px;
         margin-left:90px;
       }
-      #main div#section2 div.section_head div.head_content{
+      #section2 div.section_head div.head_content{
         margin-top:-75px;
       }
         #main div div.section_head div.head_content p, #main div div.section_head div.head_content p.meta a{
@@ -197,19 +197,18 @@ red: #b02a30*/
           font-size:12px;
           padding-top:3px;
         }
-      #main div#section2 #day_number{
+      #day_number{
         font-size: 71px;
         font-weight: bold;
         font-family: Times New Roman, Times, serif;
         line-height:68px;
-        
       }
-      #main div#section2 #dates{
+      #dates{
         text-align:center;
         width:90px;
         height:80px;
       }
-      #main div#section2 #dates p{
+      #dates p{
         font-size:9px;
         margin:-5px 0 0 0;
       }
@@ -237,7 +236,7 @@ red: #b02a30*/
     padding:4px 0 8px 0;
   }
   #main div.snap_jot ul{
-    margin:0px;
+    margin:0;
   }
   #notebook_jot{
     width:77px;
@@ -272,7 +271,7 @@ red: #b02a30*/
             #footer ul li:nth-child(4){
               background-position: -10px -457px;
             }
-            
+
             #footer ul li a{
               display:block;
               text-indent: -9000px;
@@ -282,20 +281,20 @@ red: #b02a30*/
               height:17px;
               margin-top:-7px;
             }
-            
+
 /*Jots*/
 
 #main.jots{
   margin-top:15px;
 }
 
-#main.jots #main_left{
+#main_left{
   width:526px;
   float:left;
   margin-top:15px;
 }
 
-#main.jots div#jots{
+#jots{
   border-top:3px solid #b02a30;
   border-bottom:3px solid #b02a30;
 }
@@ -324,20 +323,20 @@ red: #b02a30*/
   font-size: 12px;
 }
 
-#main.jots #main_left div#jots div.jot{
+#jots div.jot{
   border-bottom:2px solid #e1e1e1;
   padding-bottom:5px;
 }
-#main.jots #main_left div#jots div.jot:last-child{
+#jots div.jot:last-child{
   border-bottom:none;
 }
 
-#main.jots #main_left p.meta{
+#main_left p.meta{
   color:#a1a1a1;
   font-size: 9px;
 }
 
-#main.jots #main_right{
+#main_right{
   float:right;
   width:253px;
   margin-top:15px;
@@ -346,27 +345,27 @@ red: #b02a30*/
 #expand_arrow{
   float:right;
 }
-#main.jots #expand_arrow:hover:before{
+#expand_arrow:hover:before{
   content: url(/images/jots/expand.png);
 }
 
 /*Course*/
 
-#main.jots #main_right #courses{
+#courses{
   border-top:3px solid #b02a30;
   border-bottom:3px solid #b02a30;
 }
-#main.jots #main_right #courses .not_current h3 a, #main.jots #main_right #courses .not_current{
+#courses .not_current h3 a, #courses .not_current{
   font-size: 11px;
   font-weight: normal;
   color: #b02a30;
 }
 /*none/hidden/dotted/dashed/solid/double/groove/ridge/inset/outset*/
-#main.jots #main_right #courses .course{
+#courses .course{
   padding-bottom: 4px;
   border-top: 2px dotted #e1e1e1;
 }
-#main.jots #main_right #courses .course:last-child, #main.courses .courses_column .course:last-child{
+#courses .course:last-child, #main.courses .courses_column .course:last-child{
   border-bottom: none;
 }
 
@@ -453,7 +452,7 @@ red: #b02a30*/
     margin-top:-16px;
     color:#464646;
     background:white;
-    padding:6px 0px 7px 0px;
+    padding:6px 0 7px 0;
     font-size:11px;
     text-align:center;
   }
