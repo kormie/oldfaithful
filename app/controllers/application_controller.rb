@@ -3,12 +3,11 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
   before_filter :nav_spots
 
-    def layout_by_resource
-      if devise_controller?
-        "intro"
-      else
-        "application"
-      end
+  def layout_by_resource
+    if devise_controller?
+      "intro"
+    else
+      "application"
     end
 
     def after_sign_out_path_for(resource_or_scope)

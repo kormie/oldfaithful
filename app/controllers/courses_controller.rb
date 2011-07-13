@@ -84,6 +84,7 @@ class CoursesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
   def course_column
     @course = Course.all
   end
